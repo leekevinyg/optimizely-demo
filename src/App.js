@@ -5,22 +5,16 @@ import './App.css';
 
 class App extends Component {
 
-  constructor(props) {
-  	super(props);
-  	this.state = {
-  		experiments: ExperimentStore.getExperiments()
-  	}
-  }
-
   componentDidMount() {
-  	ExperimentStore.addChangeListener(this._updateExperiments);
+  	//ExperimentStore.addChangeListener(this._updateExperiments);
   }
 
   componentWillUnmount() {
-  	ExperimentStore.removeChangeListener(this._updateExperiments);
+  	//ExperimentStore.removeChangeListener(this._updateExperiments);
   }
 
   _updateExperiments() {
+  	console.log('updating experiment state');
   	this.setState({ 
   		experiments: ExperimentStore.getExperiments() 
   	});
