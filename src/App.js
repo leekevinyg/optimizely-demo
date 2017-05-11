@@ -6,11 +6,11 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-  	//ExperimentStore.addChangeListener(this._updateExperiments);
+  	ExperimentStore.addChangeListener(this._updateExperiments);
   }
 
   componentWillUnmount() {
-  	//ExperimentStore.removeChangeListener(this._updateExperiments);
+  	ExperimentStore.removeChangeListener(this._updateExperiments);
   }
 
   _updateExperiments() {

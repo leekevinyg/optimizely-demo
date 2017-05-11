@@ -20,14 +20,14 @@ var ExperimentStore = createStore({
         experimentActivate: function(payload) {
             console.log('in store about to emit change for payload' + payload);
             this._experiments = this._experiments.set(
-                payload.experiment.id,
+                payload.id,
                 true
             );
             this.emitChange();
         },
         experimentDeactivate: function(payload) {
             this._experiments = this._experiments.delete(
-                payload.experiment.id
+                payload.id
             );
             this.emitChange();
         }

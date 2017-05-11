@@ -1,27 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Dispatcher from 'dispatchr';
+import ExperimentStore from './store/ExperimentStore';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-
-console.log('in index.js');
 
 ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
 
+var Dispatcher = require('dispatchr').createDispatcher({
+    stores: [ExperimentStore]
+});
+var DispatcherContext = Dispatcher.createContext({});
+
 window.OptimizelyExperiments = {
     activate: function(experimentName) {
     	console.log('activating experiment' + experimentName);
-        Dispatcher.dispatch('experimentActivate', {
+        DispatcherContext.dispatch('experimentActivate', {
             id: experimentName
         });
     },
     deactivate: function(experimentName) {
-        Dispatcher.dispatch('experimentDeactivate', {
+        DispatcherContext.dispatch('experimentDeactivate', {
             id: experimentName
         });
     }
