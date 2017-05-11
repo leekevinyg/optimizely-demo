@@ -13,18 +13,17 @@ ReactDOM.render(
 
 var Dispatcher = require('dispatchr').createDispatcher({
     stores: [ExperimentStore]
-});
-var DispatcherContext = Dispatcher.createContext({});
+}).createContext({});
 
 window.OptimizelyExperiments = {
     activate: function(experimentName) {
     	console.log('activating experiment' + experimentName);
-        DispatcherContext.dispatch('experimentActivate', {
+        Dispatcher.dispatch('experimentActivate', {
             id: experimentName
         });
     },
     deactivate: function(experimentName) {
-        DispatcherContext.dispatch('experimentDeactivate', {
+        Dispatcher.dispatch('experimentDeactivate', {
             id: experimentName
         });
     }

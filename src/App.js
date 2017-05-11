@@ -5,7 +5,10 @@ import './App.css';
 
 class App extends Component {
 
+  // Examples: https://github.com/yahoo/fluxible/tree/master/examples/todo
+
   componentDidMount() {
+    console.log(ExperimentStore);
   	ExperimentStore.addChangeListener(this._updateExperiments);
   }
 
