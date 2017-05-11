@@ -1,58 +1,44 @@
 import React, { Component } from 'react';
-import CallToAction from './CallToAction';
+import CallToAction from './components/CallToAction';
 import ExperimentStore from './store/ExperimentStore';
 import './App.css';
 
 class App extends Component {
-  
-  static contextTypes = {
-    getStore: React.PropTypes.func.isRequired;
-  }
 
-  // Examples: https://github.com/yahoo/fluxible/tree/master/examples/todo
   constructor(props) {
     super(props);
-    this.state = this.getStoreState();
+    this.state = {
+      experiments: ExperimentStore.getState()
+    };
   }
 
   componentDidMount() {
-    console.log(ExperimentStore);
-  	ExperimentStore.addChangeListener(this._updateExperiments);
+  	ExperimentStore.listen(this.updateExperiments.bind(this));
   }
 
   componentWillUnmount() {
-  	ExperimentStore.removeChangeListener(this._updateExperiments);
+  	ExperimentStore.unlisten(this.updateExperiments.bind(this));
   }
 
-  _updateExperiments() {
-  	console.log('updating experiment state');
-  	this.setState({ 
-  		experiments: ExperimentStore.getExperiments() 
-  	});
+  updateExperiments(state) {
+     this.setState({
+        experiments: state
+     });
+     debugger;
   }
 
   render() {
+    if (this.state.experiments['homepage-feed']) {
+      return (
+        <div>Splash Page Feed Activiated!</div>
+      );
+    }
+
     return (
       <div className="container">
-
 	      <div className="row">
-
 	      	<CallToAction />
-
-	      	<div className="col-md-6">
-	      		<div className="row text-center">
-	      			<img className="logo" src="http://placehold.it/100x100" alt=""/>
-	      		</div>
-	      		<div className="row text-center">
-	      			<h2>Collect money from your group and make something happen</h2>
-	      		</div>
-	      		<div className="row text-center">
-	      			<button type="button" className="btn btn-success">Get Started</button>
-	      		</div>
-	      	</div>
-
 	      </div>
-
       </div>
     );
   }

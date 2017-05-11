@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "alt": "^0.18.6",
     "bootstrap": "^3.3.7",
-    "dispatchr": "^1.1.1",
-    "immutable": "^3.8.1",
     "jquery": "^3.2.1",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",

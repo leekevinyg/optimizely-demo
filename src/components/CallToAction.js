@@ -5,13 +5,13 @@ class CallToAction extends Component {
     return (
 	    <div className="col-md-6">
 	      	<div className="row text-center">
-	      		<img className="logo" src="http://placehold.it/100x100" alt=""/>
+	      		<img className="logo" src="http://placekitten.com/g/408/287" alt=""/>
 	      	</div>
 	      	<div className="row text-center">
-	      		<h2>Click Get Started Below. You know you want to do it.</h2>
+	      		<h2>You know you want to adopt me.</h2>
 	      	</div>
 	      	<div className="row text-center">
-	      		<button type="button" className="btn btn-success">Get Started</button>
+	      		<button type="button" className="btn btn-success">Adopt Me</button>
 	      	</div>
 	    </div>
     );

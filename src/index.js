@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import ExperimentStore from './store/ExperimentStore';
+import ExperimentActions from './actions/ExperimentActions';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -11,20 +11,18 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-var Dispatcher = require('dispatchr').createDispatcher({
-    stores: [ExperimentStore]
-}).createContext({});
-
 window.OptimizelyExperiments = {
     activate: function(experimentName) {
-    	console.log('activating experiment' + experimentName);
-        Dispatcher.dispatch('experimentActivate', {
+    	console.log('activating experiment ' + experimentName);
+        ExperimentActions.addExperiment({
             id: experimentName
         });
     },
+    /*
     deactivate: function(experimentName) {
         Dispatcher.dispatch('experimentDeactivate', {
             id: experimentName
         });
     }
+    */
 };
