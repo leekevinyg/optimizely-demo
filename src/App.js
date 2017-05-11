@@ -4,8 +4,16 @@ import ExperimentStore from './store/ExperimentStore';
 import './App.css';
 
 class App extends Component {
+  
+  static contextTypes = {
+    getStore: React.PropTypes.func.isRequired;
+  }
 
   // Examples: https://github.com/yahoo/fluxible/tree/master/examples/todo
+  constructor(props) {
+    super(props);
+    this.state = this.getStoreState();
+  }
 
   componentDidMount() {
     console.log(ExperimentStore);

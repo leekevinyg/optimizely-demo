@@ -1,6 +1,9 @@
 var Immutable = require('immutable'),
     createStore = require('dispatchr/addons/createStore');
 
+
+// fix up to match http://stackoverflow.com/questions/32377076/reactjs-getting-event-from-store-with-fluxible
+
 var ExperimentStore = createStore({
     storeName: 'ExperimentStore',
 
