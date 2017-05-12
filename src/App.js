@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.experiments['homepage-feed']) {
+    if (this.state.experiments.id === 'homepage-feed') {
       return (
         <div>Splash Page Feed Activiated!</div>
       );
