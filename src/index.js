@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import HomePage from './HomePage';
 import ExperimentActions from './actions/ExperimentActions';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
 ReactDOM.render(
-  <App />,
+  <HomePage />,
   document.getElementById('root')
 );
 
 window.OptimizelyExperiments = {
     activate: function(experimentName) {
-    	console.log('activating experiment ' + experimentName);
+    	console.log('activating experiment ' + experimentName + ' from OptimizelyExperiments hook');
         ExperimentActions.addExperiment(experimentName);
     },
     deactivate: function(experimentName) {

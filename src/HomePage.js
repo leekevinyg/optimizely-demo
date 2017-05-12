@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import CallToAction from './components/CallToAction';
 import ExperimentStore from './store/ExperimentStore';
-import './App.css';
+import './HomePage.css';
 
-class App extends Component {
+class HomePage extends Component {
 
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   updateExperiments(experiments) {
-    console.log('setting experiment state in our main component');
+    console.log('setting experiment state in our main component (homepage)');
     this.setState(experiments);
   }
 
@@ -28,7 +28,14 @@ class App extends Component {
 
     if (experiments.has('homepage-feed')) {
       return (
-        <div>Splash Page Feed Activiated!</div>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+             Splash Page Feed Activiated!
+            </div>
+            <CallToAction />
+          </div>
+        </div>
       );
     }
 
@@ -42,4 +49,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default HomePage;
