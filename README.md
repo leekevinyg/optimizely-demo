@@ -1,4 +1,4 @@
-Simple app to demo A/B Testing Architecture using ES6, React, and the Alt Flux Library.
+**Simple app to demo A/B Testing Architecture using ES6, React, and the Alt Flux Library.**
 
 App is live at: https://leekevinyg.github.io/optimizelydemo/
 
