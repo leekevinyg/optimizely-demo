@@ -7,9 +7,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      experiments: ExperimentStore.getState()
-    };
+    this.state = ExperimentStore.getState();
   }
 
   componentDidMount() {
@@ -20,15 +18,15 @@ class App extends Component {
   	ExperimentStore.unlisten(this.updateExperiments.bind(this));
   }
 
-  updateExperiments(state) {
-     this.setState({
-        experiments: state
-     });
+  updateExperiments(experiments) {
+     this.setState(experiments);
      debugger;
   }
 
   render() {
-    if (this.state.experiments.id === 'homepage-feed') {
+    let experiments = this.state.experiments;
+
+    if (experiments.filter(experiment => experiment.id === 'homepage-feed')) {
       return (
         <div>Splash Page Feed Activiated!</div>
       );

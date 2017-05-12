@@ -11,6 +11,7 @@ class ExperimentStore {
     }
 
     handleAddExperiment(experiment) {
+        debugger;
         console.log('handling addition of the following experiment ' + experiment);
         this.experiments.push(experiment);
     }
