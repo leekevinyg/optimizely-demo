@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 ReactDOM.render(
   <HomePage />,
-  document.getElementById('root')
+  document.getElementById('app')
 );
 
 window.OptimizelyExperiments = {
@@ -17,6 +17,7 @@ window.OptimizelyExperiments = {
         ExperimentActions.addExperiment(experimentName);
     },
     deactivate: function(experimentName) {
+    	console.log('deactivating experiment ' + experimentName + ' from OptimizelyExperiments hook');
        ExperimentActions.removeExperiment(experimentName);
     }
 };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CallToAction from './components/CallToAction';
+import Cat from './components/Cat';
 import ExperimentStore from './store/ExperimentStore';
 import './HomePage.css';
 
@@ -26,25 +26,17 @@ class HomePage extends Component {
   render() {
     let experiments = this.state.experiments;
 
-    if (experiments.has('homepage-feed')) {
+    if (experiments.has('double-cat')) {
       return (
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-             Splash Page Feed Activiated!
-            </div>
-            <CallToAction />
-          </div>
+        <div>
+          <Cat inDoubleCatExperiment={true} />
+          <Cat inDoubleCatExperiment={true} />
         </div>
       );
     }
 
     return (
-      <div className="container">
-	      <div className="row">
-	      	<CallToAction />
-	      </div>
-      </div>
+	     <Cat inDoubleCatExperiment={false} />
     );
   }
 }

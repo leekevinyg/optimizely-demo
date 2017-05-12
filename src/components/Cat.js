@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-class CallToAction extends Component {
+class Cat extends Component {
   render() {
+  	let cls = this.props.inDoubleCatExperiment ? 'col-md-6' : 'col-md-6 col-md-offset-3';
+
     return (
-	    <div className="col-md-6">
+	    <div className={cls}>
 	      	<div className="row text-center">
 	      		<img className="logo" src="http://placekitten.com/g/408/287" alt=""/>
 	      	</div>
@@ -18,4 +20,4 @@ class CallToAction extends Component {
   }
 }
 
-export default CallToAction;
+export default Cat;
