@@ -3,17 +3,22 @@ import ExperimentActions from '../actions/ExperimentActions';
 
 class ExperimentStore {
     constructor() {
-        this.experiments = [];
+        this.experiments = new Set();
 
         this.bindListeners({
             handleAddExperiment: ExperimentActions.ADD_EXPERIMENT,
+            handleRemoveExperiment: ExperimentActions.REMOVE_EXPERIMENT
         });
     }
 
     handleAddExperiment(experiment) {
-        debugger;
-        console.log('handling addition of the following experiment ' + experiment);
-        this.experiments.push(experiment);
+        console.log('handling add experiment action in the experiment store');
+        this.experiments.add(experiment);
+    }
+
+    handleRemoveExperiment(experiment) {
+        console.log('handling remove experiment action in the experiment store');
+        this.experiments.delete(experiment);
     }
 }
 

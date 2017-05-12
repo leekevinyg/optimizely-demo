@@ -19,14 +19,14 @@ class App extends Component {
   }
 
   updateExperiments(experiments) {
-     this.setState(experiments);
-     debugger;
+    console.log('setting experiment state in our main component');
+    this.setState(experiments);
   }
 
   render() {
     let experiments = this.state.experiments;
 
-    if (experiments.filter(experiment => experiment.id === 'homepage-feed')) {
+    if (experiments.has('homepage-feed')) {
       return (
         <div>Splash Page Feed Activiated!</div>
       );

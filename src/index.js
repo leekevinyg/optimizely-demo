@@ -14,15 +14,9 @@ ReactDOM.render(
 window.OptimizelyExperiments = {
     activate: function(experimentName) {
     	console.log('activating experiment ' + experimentName);
-        ExperimentActions.addExperiment({
-            id: experimentName
-        });
+        ExperimentActions.addExperiment(experimentName);
     },
-    /*
     deactivate: function(experimentName) {
-        Dispatcher.dispatch('experimentDeactivate', {
-            id: experimentName
-        });
+       ExperimentActions.removeExperiment(experimentName);
     }
-    */
 };
