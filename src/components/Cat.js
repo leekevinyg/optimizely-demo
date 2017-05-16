@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Cat = ({inDoubleCatExperiment}) => {
-  	let cls = inDoubleCatExperiment ? 'col-md-6' : 'col-md-6 col-md-offset-3'; 
+    let cls = inDoubleCatExperiment ? 'col-md-6' : 'col-md-6 col-md-offset-3'; 
 
     return (
 	    <div className={cls}>
