@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Cat extends Component {
   render() {
-  	let cls = this.props.inDoubleCatExperiment ? 'col-md-6' : 'col-md-6 col-md-offset-3';
+  	let cls = this.props.inDoubleCatExperiment ? 'col-md-6' : 'col-md-6 col-md-offset-3'; 
 
     return (
 	    <div className={cls}>
