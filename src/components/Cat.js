@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Cat extends Component {
-  render() {
-  	let cls = this.props.inDoubleCatExperiment ? 'col-md-6' : 'col-md-6 col-md-offset-3'; 
+const Cat = ({inDoubleCatExperiment}) => {
+  	let cls = inDoubleCatExperiment ? 'col-md-6' : 'col-md-6 col-md-offset-3'; 
 
     return (
 	    <div className={cls}>
@@ -17,7 +16,6 @@ class Cat extends Component {
 	      	</div>
 	    </div>
     );
-  }
 }
 
 export default Cat;
