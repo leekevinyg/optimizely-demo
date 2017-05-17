@@ -36,7 +36,7 @@ class HomePage extends Component {
     }
 
     return (
-	     <Cat inDoubleCatExperiment={false} />
+	<Cat inDoubleCatExperiment={false} />
     );
   }
 }
