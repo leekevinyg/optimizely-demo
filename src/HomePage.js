@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Cat from './components/Cat';
 import ExperimentStore from './store/ExperimentStore';
-import './HomePage.css';
 
 class HomePage extends Component {
 
