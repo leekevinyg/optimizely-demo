@@ -1,4 +1,4 @@
-App is live at: https://leekevinyg.github.io/optimizelydemo/
+App is live at: http://leekevinyg.github.io/optimizelydemo/
 
 Deactivate and activate the 'double-cat' optimzely experiment with:
 
